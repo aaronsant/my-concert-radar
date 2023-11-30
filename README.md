@@ -20,22 +20,38 @@ Ticketmaster Developer account (more on this later)
 4. install dependencies: npm i
 6. Create environment variables. In project root directory, create a file named '.env' 
 7. Configure Spotify Developer Web App:
+   
    a) Create Spotify Developer account if not done already (https://developer.spotify.com/)
-   b) Navigate to dashboard and press Create App. 
+   
+   b) Navigate to dashboard and press Create App.
+   
    c) Give the app any name and description.
+   
    d) For Redirect URIs enter http://localhost:3000/ (THIS IS ESSENTIAL)
+   
    e) For APIs used enter Web API
+   
 8. Once the app is created, navigate to the app from Dashboard, click Settings and find the Client ID and Client Secret.
-9. In the project directory, go to the .env file and write the following lines using the Client ID and Client Secret from previous step in the respective fields. The Client ID and Client Secret from the web app should be entered immediately after the = sign. TM_API_KEY will be filed later
+9. In the project directory, go to the .env file and write the following lines using the Client ID and Client Secret from previous step in the respective fields. The Client ID and Client Secret from the web app should be entered immediately after the = sign. TM_API_KEY will be filled later.
+    
    CLIENT_ID=
+   
    CLIENT_SECRET=
+
    TM_API_KEY=
+
 10. Configure Ticketmaster Developer account:
+
     a) Create Ticketmaster Developer account if not done already (https://developer-acct.ticketmaster.com/user/login)
+    
     b) Press add a new app
+    
     c) Enter any name for the application name
+    
     d) for Redirect URI 1 enter https://oauth.ticketmaster.com/oauth/login
+    
     e) create the application
+    
 11. Once created, navigate to app on the dashboard and find the consumer key under the Keys section. Enter the consumer key in the .env file for the TM_API_KEY field (Should come immediately after = sign).
 
 ### Running the Application
