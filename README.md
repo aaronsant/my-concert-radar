@@ -1,7 +1,7 @@
 # my-concert-radar 
 This project uses the Spotify API and Ticketmaster API to generate a list of upcoming concerts that users may be interested in attending. Since this project is made in spotify's development mode, so in order for other users to use this app, they must create a Spotify Developer account and create their own app.
 
-The app starts with a homepage where users log in to their spotify account with OAuth, and then after user authentication redirects to a user page. User selects their state and how many artists they would like to show (10,20 or 30). Upon submission, a call is made to the Spotify API to get the users 10, 20 or 30 top artists and then calls are made to the Ticketmaster API to get the Attraction ID corresponding to each artist, and then searching for events for each artist in the specified location. User is then redirected to a concerts page that shows the users top artists and any upcoming concerts.   
+The app starts with a homepage where users log in to their spotify account with OAuth, and then after user authentication redirects to a user page. User selects their state and how many artists they would like to show (10, 20 or 30). Upon submission, a call is made to the Spotify API to get the users 10, 20 or 30 top artists and then calls are made to the Ticketmaster API to get the Attraction ID corresponding to each artist, and then searching for events for each artist in the specified location. User is then redirected to a concerts page that shows the users top artists and any upcoming concerts.   
 
 The project uses Node.js and Express.js on the backend with Axios HTTP-client to handle the API requests. The frontend is comprised of EJS files with some CSS styling.
 
