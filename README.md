@@ -74,6 +74,6 @@ index.js : main JS file and entry point into the application. Contains all route
 
 package.json : project Metadata and dependencies.
 
-READNE.md : Project Documentation.
+README.md : Project Documentation.
     
     
