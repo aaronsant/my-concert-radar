@@ -42,14 +42,22 @@ Ticketmaster Developer account (more on this later)
 run the app using the command: nodemon index.js
 
 ## Project Stucture
-public/ : contains static files
-    /images/ : contains any images used in the project 
-    /styles/ : contains css files used
-views/ : contains HTML/EJS files
-    /partials/ : contains header and footer partial EJS files
-.env : contains environment variables as explained in Installation and Set Up section above
+public/ : contains static files.
+
+    /images/ : contains any images used in the project. 
+    
+    /styles/ : contains css files used.
+    
+views/ : contains HTML/EJS files.
+
+    /partials/ : contains header and footer partial EJS files.
+    
+.env : contains environment variables as explained in Installation and Set Up section above.
+
 index.js : main JS file and entry point into the application. Contains all routes and backend JavaScript code.
+
 package.json : project Metadata and dependencies.
-READNE.md : Project Documentation
+
+READNE.md : Project Documentation.
     
     
