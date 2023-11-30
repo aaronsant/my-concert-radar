@@ -1,0 +1,67 @@
+<%- include("partials/header.ejs") %>
+<main class="px-3 container">
+
+<div class="container pt-4">
+  <h5>You've been listening to these artists a lot recently</h5>
+</div>
+
+<div class="artist-list m-2" data-bs-spy="scroll">
+  <div class="container-fluid">
+    <div class="row flex-row flex-nowrap mt-4 pb-4 pt-2 card-group">
+      <% topArtists.forEach((artist) => { %>
+        <div class="col">
+        <a href="<%=artist.spotifyURL%>" class="text-decoration-none">
+				<div class="bg-image card artist-card" style="background-image: url('<%=artist.imageURL%>');">
+          <div class="card-body text-white">
+            <h5 class="card-title-artist"><%=artist.name %></h5>
+          </div>
+			  </div>
+      </a>
+      </div>
+      <% }) %>
+
+    </div>
+  </div>
+</div>
+
+<div class="container p-4">
+  <h5>Check out if your favourite artists are performing near you!</h5>
+</div>
+
+    <div class="accordion accordian-flush p-3" id="accordionConcerts" data-bs-theme="dark">
+        <% let curDay = new Date(); %>
+        <% let curMonth = curDay.getMonth(); %>
+        <% events.forEach((month, i) => { %>
+            <% let monthName = monthNames[(curMonth + i) % 12] %>
+        <div class="accordion-item">
+          <h2 class="accordion-header ">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse<%=i.toString() %>" aria-expanded="true" aria-controls="panelsStayOpen-collapse<%=i.toString() %>">
+              <strong> <%=monthName %> </strong>
+            </button>
+          </h2>
+
+          <div id="panelsStayOpen-collapse<%=i.toString() %>" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              <% if(month.length){%>
+                <% month.forEach((event) => { %>
+                <a href=<%=event.eventURL %> class="text-decoration-none">
+                <div class="card bg-transparent border-light text-start m-2">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= event.eventName %></h5>
+                      <h6 class="card-subtitle text-body-secondary"><%=event.date.toDateString() %> @ <%=event.venue %>, <%=event.city %></h6>
+                    </div>
+                  </div>
+                  </a>
+              <% }) %>
+              <% } else { %>
+              <h5> No Events This Month</h2>
+              <% } %>
+              </div>
+          </div>
+        </div>
+        <% i += 1 %>
+        <% }) %>
+    </div>
+</main>
+
+<%- include("partials/footer.ejs") %> 

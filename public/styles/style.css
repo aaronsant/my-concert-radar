@@ -1,0 +1,119 @@
+
+.btn-spotify{
+  background-color: #1ed75fe1;
+  color: whitesmoke;
+  text-shadow: none;
+  border-radius: 25px;
+}
+.btn-spotify:hover,
+.btn-spotify:focus{
+  background-color: #1ed75faf;
+}
+
+.header-radar{
+  height: 40px;
+  filter: invert(1) hue-rotate(290deg);
+  animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  10%
+  {
+    transform: scale( 1 );
+  }
+  20%
+  {
+    transform: scale( .75 );
+  }
+  30%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  50%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
+}
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(252, 252, 252, 0.5);
+  min-height: 100vh;
+}
+
+.title{
+  font-family: 'Exo 2', sans-serif;
+  color: whitesmoke;
+}
+
+.artist-list{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
+.artist-card{
+  min-height: 200px;
+  min-width: 200px;
+  margin-right: 5px;
+  background-size: cover;
+  border: none;
+  background-position: center;
+  transition: all 0.2s ease-in-out !important;
+	border-radius: 25px;
+	&:hover{
+		transform: translateY(-5px);
+		box-shadow: none;
+		opacity: 0.9;
+	}
+}
+
+.card-title-artist{
+  text-shadow: -1px -1px 3px #00000069, 1px -1px 3px #00000069, -1px 1px 3px #00000069, 1px 1px 3px #00000069;
+}
+
+form{
+  max-width: 400px;
+}
+
+.loading-overlay {
+  display: none;
+  background: rgba(255, 255, 255, 0.61);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9998;
+  align-items: top;
+  justify-content: center;
+}
+
+.loading-overlay.is-active {
+  display: flex;
+}
+
+.load-text{
+  position: fixed;
+  top: 85px;
+}
+
+.spinner-border{
+  width: 50px;
+  height: 50px
+}
+
+    

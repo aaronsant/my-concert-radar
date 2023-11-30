@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs") %>
+
+<main class="px-3 container">
+    <h3 class="m-2">Log in Successful</h3>
+    <p class="mb-4">Select your State/Province and how many artists you would like to show below!</p>
+    <div class="container d-flex justify-content-center">
+    <form action="/concerts" method="POST">
+        <div class="input-group mb-3">
+            <label for="stateSelect" class="input-group-text">State/Province:</label>
+            <select id="stateSelect" class="form-select w-auto" name="state" aria-label="Default select example">
+            <% states.forEach((state) => { %>
+                <option value=<%=state %>><%=state %></option>
+            <% }) %>
+
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <label for="numArtistSelect" class="input-group-text">Artists To Show:</label>
+            <select id="numArtistSelect" class="form-select w-auto" name="numArtists" aria-label="Default select example">
+                <option value="10">Only the absolute favourites</option>
+                <option value="20">The favourites plus some</option>
+                <option value="30">Everything I Listen to</option>
+            </select>
+        </div>
+        <button type="submit" id="submit-button" class="btn btn-primary mt-2">Get My Concerts!</button>
+    </form>
+    </div>
+</main>
+
+<div class="loading-overlay text-dark conatiner" >
+    <div class="load-text">
+        <div class="spinner-border text-dark" role="status"></div>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %> 
+
+<script>
+    let overlay = document.getElementsByClassName('loading-overlay')[0]
+    document.getElementById('submit-button').addEventListener('click', e => overlay.classList.toggle('is-active'))
+</script>
